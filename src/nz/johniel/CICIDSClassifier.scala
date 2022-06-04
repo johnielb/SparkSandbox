@@ -11,7 +11,6 @@ import org.apache.spark.sql.functions
 object CICIDSClassifier extends App {
   val session = SparkSession
     .builder()
-    .master("local[2]")
     .appName("CICIDSClassifier")
     .getOrCreate()
 
