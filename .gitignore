@@ -1,5 +1,8 @@
 *.class
+*.jar
 .DS_Store
 data/
+lib/
 target/
+build.sh
 brief.pdf
