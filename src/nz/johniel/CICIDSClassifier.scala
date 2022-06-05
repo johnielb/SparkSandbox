@@ -9,38 +9,54 @@ import org.apache.spark.sql.functions
  * @author Johniel Bocacao (300490028)
  */
 object CICIDSClassifier extends App {
+  if (args.length != 1) {
+    println("usage: spark-submit --class \"nz.johniel.CICIDSClassifier\" --master \"local[n]\" CICIDSClassifier.jar (hdfs | local)")
+    System.exit(1)
+  }
   val session = SparkSession
     .builder()
+//    .master("local[8]")
     .appName("CICIDSClassifier")
     .getOrCreate()
 
+  println("================ Spark Session ================")
+  println("App Name: " + session.sparkContext.appName)
+  println("Deploy Mode: " + session.sparkContext.deployMode)
+  println("Manager: " + session.sparkContext.master)
+
+  val loadType = args(0)
   val conf = session.sparkContext.hadoopConfiguration
-  val fs = FileSystem.get(conf)
-  val status = fs.listStatus(new Path("input"))
+  var fs : FileSystem = _
+  var path : String = _
+  if (loadType == "hdfs") {
+    fs = FileSystem.get(conf)
+    path = "input/"
+  } else if (loadType == "local") {
+    fs = FileSystem.getLocal(conf)
+    path = "data/"
+  } else {
+    println("usage: spark-submit --class \"nz.johniel.CICIDSClassifier\" --master \"local[n]\" CICIDSClassifier.jar (hdfs | local)")
+    System.exit(1)
+  }
+
+  val status = fs.listStatus(new Path(path))
   val dataCount = status
     .map(x => x.getPath.toString)
     .count(_.contains("Friday-WorkingHours"))
 
   if (dataCount == 3) {
-    val friday1 = session.read.options(Map("header"->"true", "inferSchema"->"true")).csv("input/Friday-WorkingHours-Morning.pcap_ISCX.csv")
-    val friday2 = session.read.options(Map("header"->"true", "inferSchema"->"true")).csv("input/Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv")
-    val friday3 = session.read.options(Map("header"->"true", "inferSchema"->"true")).csv("input/Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv")
-    val friday = friday1
-      // Join separated files together
-      .union(friday2)
-      .union(friday3)
-      // Reclassify
-      .withColumn("class", functions.when(functions.col(" Label") === "DDoS", 1)
-        .when(functions.col(" Label") === "BENIGN", 0)
-        .otherwise(null))
+    val friday = readCSV(path + "Friday-WorkingHours-Morning.pcap_ISCX.csv") // Join separated files together
+      .union(readCSV(path + "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv"))
+      .union(readCSV(path + "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv"))
     friday.printSchema()
     friday.show(2)
-
-    println("First SparkContext:")
-    println("APP Name :" + session.sparkContext.appName)
-    println("Deploy Mode :" + session.sparkContext.deployMode)
-    println("Master :" + session.sparkContext.master)
   } else {
-    println("ERROR: 3 input/Friday-WorkingHours-*.csv's not found in HDFS")
+    println("ERROR: 3 input/Friday-WorkingHours-*.csv's not found in data directory or HDFS input")
+  }
+
+  private def readCSV(filePath: String) = {
+    session.read
+      .options(Map("header" -> "true", "inferSchema" -> "true"))
+      .csv(filePath)
   }
 }
