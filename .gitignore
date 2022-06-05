@@ -5,4 +5,4 @@ data/
 lib/
 target/
 brief.pdf
-ssh.sh
+deploy.sh
