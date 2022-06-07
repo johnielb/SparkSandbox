@@ -1,7 +1,7 @@
 *.class
 *.jar
 .DS_Store
-data/
+input/
 lib/
 target/
 brief.pdf

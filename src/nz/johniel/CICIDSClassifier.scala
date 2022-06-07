@@ -14,13 +14,14 @@ import org.apache.spark.sql.functions
  * @author Johniel Bocacao (300490028)
  */
 object CICIDSClassifier extends App {
+  private val usage = "usage: spark-submit --class \"nz.johniel.CICIDSClassifier\" --master (\"local[n]\" | yarn) CICIDSClassifier.jar (hdfs | local)"
   if (args.length != 1) {
-    println("usage: spark-submit --class \"nz.johniel.CICIDSClassifier\" --master \"local[n]\" CICIDSClassifier.jar (hdfs | local)")
+    println(usage)
     System.exit(1)
   }
   val session = SparkSession
     .builder()
-    .master("local[8]")
+//    .master("local[8]")
     .appName("CICIDSClassifier")
     .getOrCreate()
 
@@ -32,20 +33,17 @@ object CICIDSClassifier extends App {
   val loadType = args(0)
   val conf = session.sparkContext.hadoopConfiguration
   var fs : FileSystem = _
-  var path : String = _
+  var path : String = "input/"
   if (loadType == "hdfs") {
     fs = FileSystem.get(conf)
-    path = "input/"
   } else if (loadType == "local") {
     fs = FileSystem.getLocal(conf)
-    path = "data/"
   } else {
-    println("usage: spark-submit --class \"nz.johniel.CICIDSClassifier\" --master \"local[n]\" CICIDSClassifier.jar (hdfs | local)")
+    println(usage)
     System.exit(1)
   }
-  // Check how many Friday*.csv's are in the dir
-  val status = fs.listStatus(new Path(path))
-  val dataCount = status
+  // Count how many Friday*.csv's are in the dir
+  val dataCount = fs.listStatus(new Path(path))
     .map(x => x.getPath.toString)
     .count(_.contains("Friday-WorkingHours"))
 
