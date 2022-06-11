@@ -6,3 +6,5 @@ lib/
 target/
 brief.pdf
 deploy.sh
+references.bib
+report.md
