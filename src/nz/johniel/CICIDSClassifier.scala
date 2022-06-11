@@ -18,7 +18,7 @@ object CICIDSClassifier extends App {
   }
   val session = SparkSession
     .builder()
-//    .master("local[8]")
+    .master("local[8]")
     .appName("CICIDSClassifier")
     .getOrCreate()
 
@@ -42,8 +42,8 @@ object CICIDSClassifier extends App {
   }
   // Count how many Friday*.csv's are in the dir
   val dataCount = fs.listStatus(new Path(path))
-    .map(x => x.getPath.toString)
-    .count(_.contains("Friday-WorkingHours"))
+    .map(x => x.getPath.getName)
+    .count(_.startsWith("Friday-WorkingHours"))
 
   if (dataCount == 3) {
     // BEGIN INGESTING AND WRANGLING DATA ====================
@@ -72,7 +72,7 @@ object CICIDSClassifier extends App {
 
     // 2. Define and build pipeline ============================================
     val featureCols = train.columns.filter(x => x != " Label")
-    if (verbose) println("Features: " + featureCols.mkString(", "))
+    if (verbose) println(featureCols.length + " features:" + featureCols.mkString(","))
 
     val pipeline = new Pipeline()
       .setStages(Array(
@@ -80,7 +80,7 @@ object CICIDSClassifier extends App {
         new VectorAssembler()
           .setInputCols(featureCols)
           .setOutputCol("features"),
-        // Index label strings as integers
+        // Index label strings as doubles
         new StringIndexer()
           .setInputCol(" Label")
           .setOutputCol("label"),

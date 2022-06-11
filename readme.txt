@@ -4,6 +4,7 @@
 2. Download data from Kaggle: https://www.kaggle.com/code/kooaslansefat/cicids2017-safeml/data
 3. Extract all Friday-*.csv files to a working directory before putting on hdfs using
    `hdfs dfs -put Friday-WorkingHours-Morning.pcap_ISCX.csv Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv input
+4. Download CICIDSClassifier.jar to the working directory
 
 # 2. Run
 To deploy the classifier in a local client (with n workers, 0 < n <= MAX_THREADS):
