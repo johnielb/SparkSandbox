@@ -1,0 +1,278 @@
+# NORMAL 
+78 features: Destination Port, Flow Duration, Total Fwd Packets, Total Backward Packets,Total Length of Fwd Packets, Total Length of Bwd Packets, Fwd Packet Length Max, Fwd Packet Length Min, Fwd Packet Length Mean, Fwd Packet Length Std,Bwd Packet Length Max, Bwd Packet Length Min, Bwd Packet Length Mean, Bwd Packet Length Std,Flow Bytes/s, Flow Packets/s, Flow IAT Mean, Flow IAT Std, Flow IAT Max, Flow IAT Min,Fwd IAT Total, Fwd IAT Mean, Fwd IAT Std, Fwd IAT Max, Fwd IAT Min,Bwd IAT Total, Bwd IAT Mean, Bwd IAT Std, Bwd IAT Max, Bwd IAT Min,Fwd PSH Flags, Bwd PSH Flags, Fwd URG Flags, Bwd URG Flags, Fwd Header Length34, Bwd Header Length,Fwd Packets/s, Bwd Packets/s, Min Packet Length, Max Packet Length, Packet Length Mean, Packet Length Std, Packet Length Variance,FIN Flag Count, SYN Flag Count, RST Flag Count, PSH Flag Count, ACK Flag Count, URG Flag Count, CWE Flag Count, ECE Flag Count, Down/Up Ratio, Average Packet Size, Avg Fwd Segment Size, Avg Bwd Segment Size, Fwd Header Length55,Fwd Avg Bytes/Bulk, Fwd Avg Packets/Bulk, Fwd Avg Bulk Rate, Bwd Avg Bytes/Bulk, Bwd Avg Packets/Bulk,Bwd Avg Bulk Rate,Subflow Fwd Packets, Subflow Fwd Bytes, Subflow Bwd Packets, Subflow Bwd Bytes,Init_Win_bytes_forward, Init_Win_bytes_backward, act_data_pkt_fwd, min_seg_size_forward,Active Mean, Active Std, Active Max, Active Min,Idle Mean, Idle Std, Idle Max, Idle Min
+vecAssembler_25383a6ae528 %>% strIdx_0fc8227b690e %>% dtc_ef1376a7978e
+DecisionTreeClassificationModel (uid=dtc_ef1376a7978e) of depth 5 with 35 nodes
+  If (feature 4 <= 3.0)
+   If (feature 14 <= 2288.7661225)
+    If (feature 40 <= 2.2)
+     If (feature 34 <= 98.0)
+      Predict: 0.0
+     Else (feature 34 > 98.0)
+      If (feature 37 <= 24.599602519999998)
+       Predict: 0.0
+      Else (feature 37 > 24.599602519999998)
+       Predict: 1.0
+    Else (feature 40 > 2.2)
+     If (feature 17 <= 1.045E7)
+      Predict: 0.0
+     Else (feature 17 > 1.045E7)
+      Predict: 1.0
+   Else (feature 14 > 2288.7661225)
+    If (feature 46 <= 0.5)
+     Predict: 0.0
+    Else (feature 46 > 0.5)
+     Predict: 1.0
+  Else (feature 4 > 3.0)
+   If (feature 6 <= 21.0)
+    If (feature 4 <= 19.0)
+     If (feature 6 <= 16.0)
+      Predict: 0.0
+     Else (feature 6 > 16.0)
+      Predict: 1.0
+    Else (feature 4 > 19.0)
+     If (feature 66 <= 255.5)
+      If (feature 9 <= 5.8756741255)
+       Predict: 0.0
+      Else (feature 9 > 5.8756741255)
+       Predict: 2.0
+     Else (feature 66 > 255.5)
+      If (feature 25 <= 8080304.5)
+       Predict: 2.0
+      Else (feature 25 > 8080304.5)
+       Predict: 0.0
+   Else (feature 6 > 21.0)
+    If (feature 13 <= 2183.0297259999998)
+     If (feature 0 <= 8000.5)
+      Predict: 0.0
+     Else (feature 0 > 8000.5)
+      If (feature 10 <= 98.5)
+       Predict: 0.0
+      Else (feature 10 > 98.5)
+       Predict: 3.0
+    Else (feature 13 > 2183.0297259999998)
+     If (feature 0 <= 80.5)
+      Predict: 1.0
+     Else (feature 0 > 80.5)
+      Predict: 0.0
+
+> Training metrics (351585 instances)
+Accuracy = 0.9967120326521325
+> Test metrics(351613 instances)
+Accuracy = 0.996672477980052
+
+<id>application_1654736042373_0718</id>
+<user>bocacajohn</user>
+<name>nz.johniel.CICIDSClassifier</name>
+<queue>default</queue>
+<state>FINISHED</state>
+<finalStatus>SUCCEEDED</finalStatus>
+<progress>100.0</progress>
+<trackingUI>History</trackingUI>
+<trackingUrl>
+http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1654736042373_0718/
+</trackingUrl>
+<diagnostics/>
+<clusterId>1654736042373</clusterId>
+<applicationType>SPARK</applicationType>
+<applicationTags/>
+<priority>0</priority>
+<startedTime>1655074321313</startedTime>
+<finishedTime>1655074490439</finishedTime>
+<elapsedTime>169126</elapsedTime>
+<amContainerLogs>
+http://co246a-8.ecs.vuw.ac.nz:8042/node/containerlogs/container_1654736042373_0718_01_000001/bocacajohn
+</amContainerLogs>
+
+# Scaling
+78 features: Destination Port, Flow Duration, Total Fwd Packets, Total Backward Packets,Total Length of Fwd Packets, Total Length of Bwd Packets, Fwd Packet Length Max, Fwd Packet Length Min, Fwd Packet Length Mean, Fwd Packet Length Std,Bwd Packet Length Max, Bwd Packet Length Min, Bwd Packet Length Mean, Bwd Packet Length Std,Flow Bytes/s, Flow Packets/s, Flow IAT Mean, Flow IAT Std, Flow IAT Max, Flow IAT Min,Fwd IAT Total, Fwd IAT Mean, Fwd IAT Std, Fwd IAT Max, Fwd IAT Min,Bwd IAT Total, Bwd IAT Mean, Bwd IAT Std, Bwd IAT Max, Bwd IAT Min,Fwd PSH Flags, Bwd PSH Flags, Fwd URG Flags, Bwd URG Flags, Fwd Header Length34, Bwd Header Length,Fwd Packets/s, Bwd Packets/s, Min Packet Length, Max Packet Length, Packet Length Mean, Packet Length Std, Packet Length Variance,FIN Flag Count, SYN Flag Count, RST Flag Count, PSH Flag Count, ACK Flag Count, URG Flag Count, CWE Flag Count, ECE Flag Count, Down/Up Ratio, Average Packet Size, Avg Fwd Segment Size, Avg Bwd Segment Size, Fwd Header Length55,Fwd Avg Bytes/Bulk, Fwd Avg Packets/Bulk, Fwd Avg Bulk Rate, Bwd Avg Bytes/Bulk, Bwd Avg Packets/Bulk,Bwd Avg Bulk Rate,Subflow Fwd Packets, Subflow Fwd Bytes, Subflow Bwd Packets, Subflow Bwd Bytes,Init_Win_bytes_forward, Init_Win_bytes_backward, act_data_pkt_fwd, min_seg_size_forward,Active Mean, Active Std, Active Max, Active Min,Idle Mean, Idle Std, Idle Max, Idle Min
+vecAssembler_b7548c08fbd3 %>% strIdx_66f36dc08be0 %>% stdScal_cb4da493a8e8 %>% dtc_cb8266f752db
+DecisionTreeClassificationModel (uid=dtc_cb8266f752db) of depth 5 with 41 nodes
+  If (feature 4 <= -0.12032300856602549)
+   If (feature 11 <= -0.43457763134660954)
+    If (feature 34 <= -0.005077499266609839)
+     If (feature 27 <= 1.0693794640625367)
+      Predict: 0.0
+     Else (feature 27 > 1.0693794640625367)
+      If (feature 0 <= -0.45898323640652017)
+       Predict: 1.0
+      Else (feature 0 > -0.45898323640652017)
+       Predict: 0.0
+    Else (feature 34 > -0.005077499266609839)
+     If (feature 37 <= -0.23178931359146193)
+      Predict: 0.0
+     Else (feature 37 > -0.23178931359146193)
+      If (feature 0 <= -0.41813936589885314)
+       Predict: 1.0
+      Else (feature 0 > -0.41813936589885314)
+       Predict: 0.0
+   Else (feature 11 > -0.43457763134660954)
+    If (feature 5 <= -0.006010316635199816)
+     If (feature 19 <= -0.015971710469755613)
+      If (feature 46 <= -0.44570552566690635)
+       Predict: 0.0
+      Else (feature 46 > -0.44570552566690635)
+       Predict: 1.0
+     Else (feature 19 > -0.015971710469755613)
+      Predict: 0.0
+    Else (feature 5 > -0.006010316635199816)
+     Predict: 0.0
+  Else (feature 4 > -0.12032300856602549)
+   If (feature 6 <= -0.2054187264043582)
+    If (feature 4 <= -0.11687180708772221)
+     If (feature 6 <= -0.20982124370898542)
+      Predict: 0.0
+     Else (feature 6 > -0.20982124370898542)
+      Predict: 1.0
+    Else (feature 4 > -0.11687180708772221)
+     If (feature 66 <= -0.5682929616785299)
+      If (feature 9 <= -0.18384758899923942)
+       Predict: 0.0
+      Else (feature 9 > -0.18384758899923942)
+       Predict: 2.0
+     Else (feature 66 > -0.5682929616785299)
+      If (feature 25 <= 0.04805335871522653)
+       Predict: 2.0
+      Else (feature 25 > 0.04805335871522653)
+       Predict: 0.0
+   Else (feature 6 > -0.2054187264043582)
+    If (feature 13 <= 1.529404478534635)
+     If (feature 0 <= 9.152743593424609E-4)
+      Predict: 0.0
+     Else (feature 0 > 9.152743593424609E-4)
+      If (feature 10 <= -0.39533854469425983)
+       Predict: 0.0
+      Else (feature 10 > -0.39533854469425983)
+       Predict: 3.0
+    Else (feature 13 > 1.529404478534635)
+     If (feature 0 <= -0.45727658742638394)
+      Predict: 1.0
+     Else (feature 0 > -0.45727658742638394)
+      Predict: 0.0
+
+> Training metrics (351585 instances)
+Accuracy = 0.9967347867514257
+> Test metrics(351613 instances)
+Accuracy = 0.9967009183391968
+
+<id>application_1654736042373_0720</id>
+<user>bocacajohn</user>
+<name>nz.johniel.CICIDSClassifier</name>
+<queue>default</queue>
+<state>FINISHED</state>
+<finalStatus>SUCCEEDED</finalStatus>
+<progress>100.0</progress>
+<trackingUI>History</trackingUI>
+<trackingUrl>
+http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1654736042373_0720/
+</trackingUrl>
+<diagnostics/>
+<clusterId>1654736042373</clusterId>
+<applicationType>SPARK</applicationType>
+<applicationTags/>
+<priority>0</priority>
+<startedTime>1655074494539</startedTime>
+<finishedTime>1655074630203</finishedTime>
+<elapsedTime>135664</elapsedTime>
+<amContainerLogs>
+http://co246a-1.ecs.vuw.ac.nz:8042/node/containerlogs/container_1654736042373_0720_01_000001/bocacajohn
+</amContainerLogs>
+
+# PCA
+66 features: Destination Port, Flow Duration, Total Fwd Packets, Total Backward Packets,Total Length of Fwd Packets, Total Length of Bwd Packets, Fwd Packet Length Max, Fwd Packet Length Min, Fwd Packet Length Mean, Fwd Packet Length Std,Bwd Packet Length Max, Bwd Packet Length Min, Bwd Packet Length Mean, Bwd Packet Length Std, Flow IAT Mean, Flow IAT Std, Flow IAT Max, Flow IAT Min,Fwd IAT Total, Fwd IAT Mean, Fwd IAT Std, Fwd IAT Max, Fwd IAT Min,Bwd IAT Total, Bwd IAT Mean, Bwd IAT Std, Bwd IAT Max, Bwd IAT Min,Fwd PSH Flags, Fwd Header Length34, Bwd Header Length,Fwd Packets/s, Bwd Packets/s, Min Packet Length, Max Packet Length, Packet Length Mean, Packet Length Std, Packet Length Variance,FIN Flag Count, SYN Flag Count, RST Flag Count, PSH Flag Count, ACK Flag Count, URG Flag Count, ECE Flag Count, Down/Up Ratio, Average Packet Size, Avg Fwd Segment Size, Avg Bwd Segment Size, Fwd Header Length55,Subflow Fwd Packets, Subflow Fwd Bytes, Subflow Bwd Packets, Subflow Bwd Bytes,Init_Win_bytes_forward, Init_Win_bytes_backward, act_data_pkt_fwd, min_seg_size_forward,Active Mean, Active Std, Active Max, Active Min,Idle Mean, Idle Std, Idle Max, Idle Min
+vecAssembler_bd67291835d6 %>% strIdx_75ce5b08316b %>% pca_7c43ff56df79 %>% dtc_6ea579e72222
+DecisionTreeClassificationModel (uid=dtc_6ea579e72222) of depth 5 with 45 nodes
+  If (feature 0 <= -115.2088313166264)
+   If (feature 7 <= 31299.23939143915)
+    If (feature 2 <= 2.1180186606494866E7)
+     If (feature 6 <= 197.63891068146117)
+      Predict: 0.0
+     Else (feature 6 > 197.63891068146117)
+      If (feature 4 <= 13772.449479446997)
+       Predict: 0.0
+      Else (feature 4 > 13772.449479446997)
+       Predict: 2.0
+    Else (feature 2 > 2.1180186606494866E7)
+     If (feature 4 <= -1485503.4755315632)
+      If (feature 8 <= -66294.26589819214)
+       Predict: 2.0
+      Else (feature 8 > -66294.26589819214)
+       Predict: 0.0
+     Else (feature 4 > -1485503.4755315632)
+      If (feature 12 <= 587103.355232015)
+       Predict: 2.0
+      Else (feature 12 > 587103.355232015)
+       Predict: 0.0
+   Else (feature 7 > 31299.23939143915)
+    If (feature 1 <= -1777191.559102244)
+     Predict: 0.0
+    Else (feature 1 > -1777191.559102244)
+     If (feature 5 <= -3538674.5457310956)
+      If (feature 15 <= 389477.8489579592)
+       Predict: 0.0
+      Else (feature 15 > 389477.8489579592)
+       Predict: 2.0
+     Else (feature 5 > -3538674.5457310956)
+      If (feature 19 <= 7175.607635252431)
+       Predict: 2.0
+      Else (feature 19 > 7175.607635252431)
+       Predict: 0.0
+  Else (feature 0 > -115.2088313166264)
+   If (feature 3 <= 12.47124582166165)
+    If (feature 12 <= -54.057834211316035)
+     If (feature 13 <= -9.038832873749087)
+      If (feature 4 <= 40.95118309239791)
+       Predict: 1.0
+      Else (feature 4 > 40.95118309239791)
+       Predict: 0.0
+     Else (feature 13 > -9.038832873749087)
+      If (feature 16 <= 4.799321038273231)
+       Predict: 1.0
+      Else (feature 16 > 4.799321038273231)
+       Predict: 0.0
+    Else (feature 12 > -54.057834211316035)
+     If (feature 4 <= -0.677384900674707)
+      If (feature 4 <= -8.631825102967436)
+       Predict: 0.0
+      Else (feature 4 > -8.631825102967436)
+       Predict: 1.0
+     Else (feature 4 > -0.677384900674707)
+      Predict: 0.0
+   Else (feature 3 > 12.47124582166165)
+    If (feature 1 <= 8.498357263467952)
+     If (feature 7 <= -21.635535111548858)
+      If (feature 3 <= 17.280433085984107)
+       Predict: 1.0
+      Else (feature 3 > 17.280433085984107)
+       Predict: 0.0
+     Else (feature 7 > -21.635535111548858)
+      Predict: 0.0
+    Else (feature 1 > 8.498357263467952)
+     Predict: 0.0
+
+> Training metrics (351585 instances)
+Accuracy = 0.9380405876246143
+> Test metrics(351613 instances)
+Accuracy = 0.9386854297196064
+
+<id>application_1654736042373_0721</id>
+<user>bocacajohn</user>
+<name>nz.johniel.CICIDSClassifier</name>
+<queue>default</queue>
+<state>FINISHED</state>
+<finalStatus>SUCCEEDED</finalStatus>
+<progress>100.0</progress>
+<trackingUI>History</trackingUI>
+<trackingUrl>
+http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1654736042373_0721/
+</trackingUrl>
+<diagnostics/>
+<clusterId>1654736042373</clusterId>
+<applicationType>SPARK</applicationType>
+<applicationTags/>
+<priority>0</priority>
+<startedTime>1655074633602</startedTime>
+<finishedTime>1655074815116</finishedTime>
+<elapsedTime>181514</elapsedTime>
+<amContainerLogs>
+http://co246a-1.ecs.vuw.ac.nz:8042/node/containerlogs/container_1654736042373_0721_01_000001/bocacajohn
+</amContainerLogs>
