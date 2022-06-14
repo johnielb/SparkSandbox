@@ -7,4 +7,4 @@ target/
 brief.pdf
 deploy.sh
 references.bib
-report.md
+report.rmd
